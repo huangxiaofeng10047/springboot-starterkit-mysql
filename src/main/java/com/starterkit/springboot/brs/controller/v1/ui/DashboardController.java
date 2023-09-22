@@ -8,6 +8,7 @@ import com.starterkit.springboot.brs.dto.model.bus.TripDto;
 import com.starterkit.springboot.brs.dto.model.user.UserDto;
 import com.starterkit.springboot.brs.service.BusReservationService;
 import com.starterkit.springboot.brs.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,7 +19,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.Set;
 

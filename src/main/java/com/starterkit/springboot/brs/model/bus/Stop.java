@@ -1,11 +1,11 @@
 package com.starterkit.springboot.brs.model.bus;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
-import javax.persistence.*;
 
 /**
  * Created by Arpit Khandelwal.

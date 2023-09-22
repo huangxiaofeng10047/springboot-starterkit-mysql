@@ -4,21 +4,21 @@ import com.starterkit.springboot.brs.controller.v1.request.UserSignupRequest;
 import com.starterkit.springboot.brs.dto.model.user.UserDto;
 import com.starterkit.springboot.brs.dto.response.Response;
 import com.starterkit.springboot.brs.service.UserService;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
 
 /**
  * Created by Arpit Khandelwal.
  */
 @RestController
 @RequestMapping("/api/v1/user")
-@Api(value = "brs-application", description = "Operations pertaining to user management in the BRS application")
+@Tag(name = "brs-application", description = "Operations pertaining to user management in the BRS application")
 public class UserController {
     @Autowired
     private UserService userService;

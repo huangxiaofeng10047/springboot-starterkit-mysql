@@ -1,8 +1,11 @@
 package com.starterkit.springboot.brs.config;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 /**
  * This is a global controller written merely for showing the login and logout apis in the
@@ -24,15 +25,15 @@ import javax.validation.constraints.NotNull;
  */
 @RestController
 @RequestMapping("/api")
-@Api(value = "brs-application", description = "Operations pertaining to user login and logout in the BRS application")
+@Tag(name = "brs-application",description = "Operations pertaining to user login and logout in the BRS application")
 public class FakeController {
-    @ApiOperation("Login")
+    @Operation(summary = "Login", description = "bar")
     @PostMapping("/auth")
     public void fakeLogin(@RequestBody @Valid LoginRequest loginRequest) {
         throw new IllegalStateException("This method shouldn't be called. It's implemented by Spring Security filters.");
     }
 
-    @ApiOperation("Logout")
+    @Operation(summary="Logout")
     @PostMapping("/logout")
     public void fakeLogout() {
         throw new IllegalStateException("This method shouldn't be called. It's implemented by Spring Security filters.");

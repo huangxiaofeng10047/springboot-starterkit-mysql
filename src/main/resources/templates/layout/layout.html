@@ -3,7 +3,12 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 
 <head th:replace="fragments/header :: header">
+    <meta charset="UTF-8" />
+    <title layout:title-pattern="$CONTENT_TITLE - $DECORATOR_TITLE">acgtofe</title>
     <title>Header</title>
+    <link rel="stylesheet"
+          href="../../static/css/welcome/welcome.css"
+          th:href="@{/css/welcome/welcome.css}" />
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">

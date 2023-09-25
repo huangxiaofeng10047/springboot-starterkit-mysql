@@ -1,8 +1,11 @@
 package com.starterkit.springboot.brs.config;
 
+import nz.net.ultraq.thymeleaf.LayoutDialect;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.thymeleaf.TemplateEngine;
 
 /**
  * Created by Arpit Khandelwal.
@@ -23,5 +26,14 @@ public class PageConfig implements WebMvcConfigurer {
         registry.addViewController("/trip").setViewName("trip");
         registry.addViewController("/logout").setViewName("logout");
     }
-
+    @Bean
+    public LayoutDialect layoutDialect(){
+        return new LayoutDialect();
+    }
+    @Bean
+    public TemplateEngine templateEngine(){
+        TemplateEngine templateEngine = new TemplateEngine();
+        templateEngine.addDialect(layoutDialect());
+        return templateEngine;
+    }
 }
